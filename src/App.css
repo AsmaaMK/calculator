@@ -1,38 +1,108 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Inria+Sans:wght@400;700&display=swap');
+
+:root {
+  --primary: hsl(222, 26%, 31%);
+  --primary-dark: hsl(223, 31%, 20%);
+  --primary-darker: hsl(224, 36%, 15%);
+
+  --secondary: hsl(6, 63%, 50%);
+  --secondary-dark: hsl(6, 70%, 42%);
+
+  --tertary: hsl(225, 21%, 49%);
+  --tertary-dark: hsl(224, 28%, 35%);
+
+  --quaternary: hsl(30, 25%, 89%);
+  --quaternary-dark: hsl(26, 12%, 77%);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  font-family: 'Inria Sans', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 100vh;
+  background-color: var(--primary);
 }
 
-.App-link {
-  color: #61dafb;
+.calc {
+  width: 90%;
+  max-width: 380px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.screen {
+  background-color: var(--primary-darker);
+  box-sizing: border-box;
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 0.8rem;
+  border-radius: 0.25rem;
+  border: none;
+  outline: none;
+  font-size: 30px;
+  color: var(--quaternary);
+  text-align: right;
+}
+
+.buttons {
+  border-radius: 0.25rem;
+  border: none;
+  background-color: var(--primary-dark);
+  padding: 1rem;
+}
+
+.row + .row {
+  margin-top: 0.7rem;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.row .button {
+  flex: 1;
+  border-radius: 0.25rem;
+  border: none;
+  padding: 0.25rem;
+  background-color: var(--quaternary);
+  color: var(--primary);
+  border-bottom: 3px solid var(--quaternary-dark);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.row .button.orange {
+  background-color: var(--secondary);
+  color: var(--quaternary);
+  border-bottom: 3px solid var(--secondary-dark);
+}
+
+.row .button.blue {
+  background-color: var(--tertary);
+  color: var(--quaternary);
+  border-bottom: 3px solid var(--tertary-dark);
+}
+
+.row .button:hover {
+  background-color: var(--quaternary-dark);
+  border-color: var(--quaternary);
+}
+
+.row .button.orange:hover {
+  background-color: var(--secondary-dark);
+  border-color: var(--secondary);
+}
+
+.row .button.blue:hover {
+  background-color: var(--tertary-dark);
+  border-color: var(--tertary);
 }
